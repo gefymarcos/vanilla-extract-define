@@ -10,23 +10,31 @@ module.exports = {
   },
   module: {
     rules: [
+      // Typescript
       {
         test: /\.?tsx$/,
         exclude: /node_modules/,
         use: 'ts-loader'
       },
+      // Images
       {
         test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
         type: 'assets/img'
       },
+      // Fonts and SVGs
       {
         test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
         type: 'asset/inline',
       },
+      // CSS, PostCSS, and Sass
+      {
+        test: /\.(scss|css)$/,
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+      },
     ]
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.tsx', '.ts', '.js', '.scss'],
   },
   plugins: [
     new HtmlWebpackPlugin({
