@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin') 
 
 module.exports = {
   entry: path.join(__dirname, "src", "index.tsx"),
@@ -14,6 +15,14 @@ module.exports = {
         exclude: /node_modules/,
         use: 'ts-loader'
       },
+      {
+        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+        type: 'assets/img'
+      },
+      {
+        test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
+        type: 'asset/inline',
+      },
     ]
   },
   resolve: {
@@ -23,5 +32,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "index.html"),
     }),
+    new CleanWebpackPlugin(), 
   ],
 }
