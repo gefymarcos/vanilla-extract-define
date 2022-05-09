@@ -2,7 +2,8 @@ options:
   formatter: stylish
 files:
   include:
-    - "./src/**/*.s+(a|c)ss"
+    - "./src/assets/**/*.s+(a|c)ss"
+  ignore: "./src/assets/js/components/chord/**/*.s+(a|c)ss"
 rules:
   attribute-quotes: 1
   border-zero: 1

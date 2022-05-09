@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack serve --mode=development",
     "build": "webpack",
-    "test": "jest",
+    "test": "jest --env=jsdom",
     "lint": "yarn run eslint 'src/**/*.tsx'",
     "prettifyCSS": "prettier 'src/**/*.scss' --write",
     "prettifyTS": "prettier 'src/**/*.tsx' --write",
@@ -56,6 +56,7 @@
     "jest": "^27.5.1",
     "lint-staged": "^12.3.4",
     "mini-css-extract-plugin": "^2.5.3",
+    "path-browserify": "^1.0.1",
     "postcss-loader": "^6.2.1",
     "postcss-preset-env": "^7.4.1",
     "prettier": "^2.5.1",
